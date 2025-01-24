@@ -8,6 +8,11 @@ on:
 permissions:
   contents: write
 
+markdown_extensions:
+  - pymdownx.highlight:
+      pygments_lang_class: true
+
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
