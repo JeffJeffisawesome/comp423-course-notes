@@ -4,12 +4,20 @@
 
 ## Intro
 
+<<<<<<< HEAD
 Welcome to the Rust tutorial! Rust is a Low-level programming language, with built-in memory-safety, removing many of the headaches you would receive in ```C/C++.```  
+=======
+Welcome to the Rust tutorial! Rust is a Low-level programming language, with built-in memory-safety, removing many of the headaches you would receive in ```C/C++```
+>>>>>>> 9f318ec7395d4097c2e3ff5ee684cac66c69d1e6
 This tutorial aims to help you set up a docker container to run your Rust code in, and run your first piece of code in Rust! A more extensive tutorial can be found [here](https://doc.rust-lang.org/book/), and documentation can be read [here](https://doc.rust-lang.org/std/index.html).
 
 ## Prerequisites
 
+<<<<<<< HEAD
 You must have docker installed and running before the dev container can be created. Additionally, this tutorial will require you have git and VSCode installed, as well as having the Dev Containers extension on VSCode.
+=======
+You must have docker installed and running before the dev container can be created. Additionally, this tutorial will require you have git and vscode preinstalled, as well as having the Dev Containers extension on VSCode.
+>>>>>>> 9f318ec7395d4097c2e3ff5ee684cac66c69d1e6
 
 ## Creating a git repository
 
@@ -55,7 +63,11 @@ git push --set-upstream origin main
 ```
 .devcontainer/devcontainer.json
 ```
+<<<<<<< HEAD
 This json file will ensure that all of the correct dependencies are downloaded when running your code. Additionally, if someone else wishes to run this code, you won't have to worry if they have the right version of Rust downloaded, so long as they too have this devcontainer.json file in their .devcontainer directory.
+=======
+This json file will ensure that all of the correct dependencies are downloaded when running your code. Additionally, if someone else wishes to run this code, you won't have to worry if they have the right version of Rust downloaded.
+>>>>>>> 9f318ec7395d4097c2e3ff5ee684cac66c69d1e6
 4. Within this json file, paste in the following:
   ```
   {
