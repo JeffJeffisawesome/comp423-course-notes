@@ -4,12 +4,12 @@
 
 ## Intro
 
-Welcome to the Rust tutorial! Rust is a Low-level programming language, with built-in memory-safety, removing many of the headaches you would receive in ```C/C++```
-This tutorial aims to help you set up a docker environment to run your Rust code in, and run your first piece of code in Rust! A more extensive tutorial can be found [here](https://doc.rust-lang.org/book/), and documentation can be read [here](https://doc.rust-lang.org/std/index.html).
+Welcome to the Rust tutorial! Rust is a Low-level programming language, with built-in memory-safety, removing many of the headaches you would receive in ```C/C++.```  
+This tutorial aims to help you set up a docker container to run your Rust code in, and run your first piece of code in Rust! A more extensive tutorial can be found [here](https://doc.rust-lang.org/book/), and documentation can be read [here](https://doc.rust-lang.org/std/index.html).
 
 ## Prerequisites
 
-You must have docker installed and running before the dev container can be created.
+You must have docker installed and running before the dev container can be created. Additionally, this tutorial will require you have git and VSCode installed, as well as having the Dev Containers extension on VSCode.
 
 ## Creating a git repository
 
@@ -39,38 +39,48 @@ Replace `<your-username>` with your GitHub username
 
 6. Check your default branch name with the subcommand `git branch`. If it's not `main`, rename it to `main` with the following command: `git branch -M main`. Old versions of git choose the name `master` for the primary branch, but these days `main` is the standard primary branch name.
 
-7. Add, Commit, and Push your local commits to the GitHub repository:
+7. Create a README file (You can add whatever you want into it) in you repository, and then, Add, Commit, and Push your local commits to the GitHub repository:
 ```
-git add .
+echo "# My First Rust Project" > README.md
+git add README.md
 git commit -m "first commit"
 git push --set-upstream origin main
 ```
 
 ## Creating a dev container project
 
-2. In VSCode, open the ```Rust-Project``` directory. You can do this via: File > Open Folder
-3. Install the Dev Containers extension for VS Code.
-4. Create a ```.devcontainer``` directory in the root of your project with the following file inside of this "hidden" configuration directory:
+1. In VSCode, open the ```Rust-Project``` directory. You can do this via: File > Open Folder
+2. If you don't have it already, install the Dev Containers extension for VS Code.
+3. Create a ```.devcontainer``` directory in the root of your project with the following file inside of this "hidden" configuration directory:
 ```
 .devcontainer/devcontainer.json
 ```
-This json file will ensure that all of the correct dependencies are downloaded when running your code. Additionally, if someone else wishes to run this code, you won't have to worry if they have the right version of Rust downloaded.
-5. Within this json file, paste in the following:
-```
-{
-  "name": "First Rust Project",
-  "image": "mcr.microsoft.com/devcontainers/rust:latest",
-  "customizations": {
-    "vscode": {
-      "settings": {},
-      "extensions": ["rust-lang.rust-analyzer"]
+This json file will ensure that all of the correct dependencies are downloaded when running your code. Additionally, if someone else wishes to run this code, you won't have to worry if they have the right version of Rust downloaded, so long as they too have this devcontainer.json file in their .devcontainer directory.
+4. Within this json file, paste in the following:
+  ```
+  {
+    "name": "First Rust Project",
+    "image": "mcr.microsoft.com/devcontainers/rust:latest",
+    "customizations": {
+      "vscode": {
+        "settings": {},
+        "extensions": ["rust-lang.rust-analyzer"]
+      }
     }
   }
-}
-```
-6. Reopen the project in a VSCode Dev Container. Make sure that you currently have docker open. Press ```Ctrl+Shift+P``` (or ```Cmd+Shift+P``` on Mac) to search, then search "Dev Containers: Reopen in Container," and select the option. You may have to wait a few minutes while the image downloads.
+  ```
+  The `image` specification will ensure that your dev container is using the latest version of rust. The `extensions` specification ensures that you have the `rust-analyzer` plugin from VSCode installed.
 
-7. Check that everything is good: Once the dev container has opened, make sure that you have a recent version of rust on your system by opening a terminal pane, and typing in
+## Opening the container:
+
+!!! note 
+    Make sure you have Docker running!
+
+    The next step will not work if you do not have Docker running!
+
+1. Reopen the project in a VSCode Dev Container (You should already have the extension installed!).  Press ```Ctrl+Shift+P``` (or ```Cmd+Shift+P``` on Mac) to search, then search "Dev Containers: Reopen in Container," and select the option. You may have to wait a few minutes while the image downloads.
+
+2. Check that everything is good: Once the dev container has opened, make sure that you have a recent version of rust on your system by opening a terminal pane, and typing in
 ```
 rustc --version
 ```
@@ -78,7 +88,7 @@ As of the creation of this tutorial (1/23/2025), the latest stable version of ru
 
 ## Making your first Rust Program!
 
-1. Create a new directory to make your first Rust project (Ex: ```hello_world```), and then create your first rust file named ```main.rs```. You can do this by typing in the terminal:
+1. Create a new directory (within your container) to make your first Rust project (Ex: ```hello_world```), and then create your first rust file named ```main.rs```. You can do this by typing in the terminal:
 ```
 cargo new --vcs none hello_world
 ```
