@@ -10,10 +10,14 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.superfences
 theme:
   features:
     - content.code.copy
   name: material
   icon: 
+    annotation: material/plus-circle
     admonition:
       <type>: material/alert-circle
