@@ -95,9 +95,16 @@ cargo new --vcs none hello_world
 Navigate into `hello_world/src` to find a main.rs file that should contain the following code:
 ```
 fn main() {
+    println!("Hello, World!");
+}
+```
+Edit the print statement:
+```
+fn main() {
     println!("Hello COMP423");
 }
 ```
+
 
 2. In terminal, type:
 ```
@@ -110,5 +117,5 @@ You should see:
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.04s
      Running `/workspaces/Desktop/code/Rust-Project/hello_world/target/debug/hello_world main`
-Hello, world!
+Hello COMP423
 ```
