@@ -95,7 +95,7 @@ cargo new --vcs none hello_world
 Navigate into `hello_world/src` to find a main.rs file that should contain the following code:
 ```
 fn main() {
-    println!("Hello, world!");
+    println!("Hello COMP423");
 }
 ```
 
