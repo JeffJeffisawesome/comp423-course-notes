@@ -98,6 +98,12 @@ fn main() {
     println!("Hello, world!");
 }
 ```
+Edit the print statement:
+```
+fn main() {
+    println!("Hello COMP423");
+}
+```
 
 2. In terminal, type:
 ```
@@ -110,5 +116,5 @@ You should see:
 ```
     Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.04s
      Running `/workspaces/Desktop/code/Rust-Project/hello_world/target/debug/hello_world main`
-Hello, world!
+Hello COMP423
 ```
